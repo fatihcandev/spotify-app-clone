@@ -1,18 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-
-import Colors from "../constants/Colors";
 import HomeScreen from "../screens/Home";
 import SearchScreen from "../screens/Search";
 import LibraryScreen from "../screens/Library";
+import Icon from "../components/Icon";
+import Colors from "../constants/Colors";
 import {
   BottomTabParamList,
   HomeParamList,
   LibraryParamList,
   SearchParamList,
 } from "../types";
-import Icon from "../components/Icon";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -24,13 +23,13 @@ export default function BottomTabNavigator() {
         inactiveTintColor: Colors.lightGray,
         activeTintColor: Colors.white,
         labelStyle: {
-          marginTop: 7,
+          marginTop: 5,
           fontSize: 12,
         },
         style: {
           paddingTop: 9,
           paddingBottom: 7,
-          height: 56,
+          height: 65,
           backgroundColor: Colors.darkGray,
           borderTopWidth: 0,
         },
