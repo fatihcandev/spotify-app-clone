@@ -1,10 +1,14 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import React from "react";
+
 import HomeScreen from "../screens/Home";
 import SearchScreen from "../screens/Search";
 import LibraryScreen from "../screens/Library";
+import Playlist from "../screens/Playlist";
 import Icon from "../components/Icon";
+
+import { PlaylistNavigationOptions } from "../constants/PlaylistNavigationOptions";
 import Colors from "../constants/Colors";
 import {
   BottomTabParamList,
@@ -70,8 +74,30 @@ const HomeStack = createStackNavigator<HomeParamList>();
 
 function HomeNavigator() {
   return (
-    <HomeStack.Navigator headerMode="none">
-      <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
+    <HomeStack.Navigator headerMode="screen">
+      <HomeStack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <HomeStack.Screen
+        name="OnRepeat"
+        children={() => <Playlist title="On Repeat" />}
+        options={{
+          ...PlaylistNavigationOptions,
+          headerTitle: "On Repeat",
+        }}
+      />
+      <HomeStack.Screen
+        name="DiscoverWeekly"
+        children={() => <Playlist title="Discover Weekly" />}
+        options={{
+          ...PlaylistNavigationOptions,
+          headerTitle: "Discover Weekly",
+        }}
+      />
     </HomeStack.Navigator>
   );
 }
