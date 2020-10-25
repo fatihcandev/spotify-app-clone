@@ -1,5 +1,7 @@
 import React from "react";
+
 import * as Icons from "../icons";
+
 import { IconName } from "../../types";
 
 interface IconProps {
