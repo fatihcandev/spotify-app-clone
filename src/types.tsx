@@ -10,6 +10,12 @@ export type BottomTabParamList = {
 
 export type HomeParamList = {
   HomeScreen: undefined;
+  OnRepeat: undefined;
+  RepeatRewind: undefined;
+  DiscoverWeekly: undefined;
+  TimeCapsule: undefined;
+  DailyMixOne: undefined;
+  DailyMixTwo: undefined;
 };
 
 export type SearchParamList = {
@@ -19,6 +25,12 @@ export type SearchParamList = {
 export type LibraryParamList = {
   LibraryScreen: undefined;
 };
+
+export interface IHomeCardData {
+  image: string;
+  text: string;
+  href: any;
+}
 
 export enum IconName {
   home = "home",
@@ -33,4 +45,5 @@ export enum IconName {
   next = "next",
   heart = "heart",
   heartSolid = "heartSolid",
+  moreV = "moreV",
 }
