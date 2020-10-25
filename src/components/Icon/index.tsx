@@ -50,6 +50,9 @@ const Icon: React.FC<IconProps> = ({ name, color, ...props }) => {
     case IconName.heartSolid:
       icon = <Icons.HeartSolid color={color} {...props} />;
       break;
+    case IconName.moreV:
+      icon = <Icons.MoreVertical color={color} {...props} />;
+      break;
     default:
       icon = undefined;
       break;
