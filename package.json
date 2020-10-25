@@ -8,7 +8,7 @@
     "eject": "expo eject",
     "test": "jest --watchAll",
     "lint": "eslint ./src",
-    "svgr": "svgr ./assets/icons -d ./src/components/icons --native --svg-props className= --svgo-config .svgorc.json"
+    "svgr": "svgr ./assets/icons -d ./src/components/icons --native --svg-props strokeWidth=\"1\" --svgo-config .svgorc.json"
   },
   "jest": {
     "preset": "jest-expo"
