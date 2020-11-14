@@ -5,6 +5,6 @@ export default StyleSheet.create({
   text: {
     color: Colors.white,
     fontSize: 30,
-    fontWeight: "bold",
-  },
+    fontWeight: "bold"
+  }
 });

@@ -11,9 +11,9 @@ export const PlaylistNavigationOptions: StackNavigationOptions = {
   headerTitleAlign: "center",
   headerRight: () => <Icon name="moreV" color={Colors.white} />,
   headerTitleStyle: {
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   headerStyle: {
-    backgroundColor: Colors.black,
-  },
+    backgroundColor: Colors.black
+  }
 };

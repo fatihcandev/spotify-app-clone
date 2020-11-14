@@ -14,7 +14,7 @@ import {
   BottomTabParamList,
   HomeParamList,
   LibraryParamList,
-  SearchParamList,
+  SearchParamList
 } from "../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -28,15 +28,15 @@ export default function BottomTabNavigator() {
         activeTintColor: Colors.white,
         labelStyle: {
           marginTop: 5,
-          fontSize: 12,
+          fontSize: 12
         },
         style: {
           paddingTop: 9,
           paddingBottom: 7,
           height: 65,
           backgroundColor: Colors.darkGray,
-          borderTopWidth: 0,
-        },
+          borderTopWidth: 0
+        }
       }}
     >
       <BottomTab.Screen
@@ -45,7 +45,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <Icon name={focused ? "homeSolid" : "home"} color={color} />
-          ),
+          )
         }}
       />
       <BottomTab.Screen
@@ -54,7 +54,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <Icon name={focused ? "searchSolid" : "search"} color={color} />
-          ),
+          )
         }}
       />
       <BottomTab.Screen
@@ -63,7 +63,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <Icon name={focused ? "librarySolid" : "library"} color={color} />
-          ),
+          )
         }}
       />
     </BottomTab.Navigator>
@@ -79,7 +79,7 @@ function HomeNavigator() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          headerShown: false,
+          headerShown: false
         }}
       />
       <HomeStack.Screen
@@ -87,7 +87,7 @@ function HomeNavigator() {
         children={() => <Playlist title="On Repeat" />}
         options={{
           ...PlaylistNavigationOptions,
-          headerTitle: "On Repeat",
+          headerTitle: "On Repeat"
         }}
       />
       <HomeStack.Screen
@@ -95,7 +95,7 @@ function HomeNavigator() {
         children={() => <Playlist title="Discover Weekly" />}
         options={{
           ...PlaylistNavigationOptions,
-          headerTitle: "Discover Weekly",
+          headerTitle: "Discover Weekly"
         }}
       />
     </HomeStack.Navigator>

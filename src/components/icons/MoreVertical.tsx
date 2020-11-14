@@ -14,7 +14,6 @@ function SvgMoreVertical(props: any) {
       className=""
       strokeWidth="1"
       {...props}
-      strokeWidth="1"
     >
       <Circle cx={12} cy={12} r={1} />
       <Circle cx={12} cy={5} r={1} />

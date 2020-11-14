@@ -15,7 +15,7 @@ const HomeCard: React.FC<IHomeCardProps> = ({ image, text, onPress }) => {
       <Image
         style={styles.image}
         source={{
-          uri: image,
+          uri: image
         }}
       />
       <View style={styles.textContainer}>
