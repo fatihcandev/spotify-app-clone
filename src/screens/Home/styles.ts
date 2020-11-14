@@ -6,15 +6,15 @@ export default StyleSheet.create({
     flex: 1,
     paddingHorizontal: 16,
     paddingTop: 80,
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.black
   },
   title: {
-    marginBottom: 24,
+    marginBottom: 24
   },
   recentlyPlayedGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    marginBottom: 50,
-  },
+    marginBottom: 50
+  }
 });
