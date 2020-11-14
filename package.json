@@ -21,6 +21,7 @@
     "@react-navigation/stack": "^5.9.0",
     "expo": "~39.0.2",
     "expo-asset": "~8.2.0",
+    "expo-av": "~8.6.0",
     "expo-constants": "~9.2.0",
     "expo-font": "~8.3.0",
     "expo-linking": "^1.0.1",
@@ -33,19 +34,19 @@
     "react-native-gesture-handler": "~1.7.0",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
-    "react-native-web": "~0.13.12",
-    "react-native-svg": "12.1.0"
+    "react-native-svg": "12.1.0",
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
-    "@types/react": "~16.9.35",
-    "@types/react-native": "~0.63.2",
-    "jest-expo": "~39.0.0",
-    "typescript": "~3.9.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@svgr/cli": "^5.4.0",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
     "eslint": "^7.10.0",
-    "prettier": "2.1.2"
+    "jest-expo": "~39.0.0",
+    "prettier": "2.1.2",
+    "typescript": "~3.9.5"
   },
   "private": true
 }
