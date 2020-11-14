@@ -27,9 +27,24 @@ export type LibraryParamList = {
 };
 
 export interface IHomeCardData {
-  image: string;
+  id: string;
+  image: any;
   text: string;
   href: any;
+}
+
+export interface IHomeCardSquareData {
+  id: string;
+  cover: any;
+  name: string;
+  artist: string;
+}
+
+export interface ISong {
+  name: string;
+  artist: string;
+  cover: any;
+  playing: boolean;
 }
 
 export enum IconName {
@@ -45,5 +60,5 @@ export enum IconName {
   next = "next",
   heart = "heart",
   heartSolid = "heartSolid",
-  moreV = "moreV",
+  moreV = "moreV"
 }
