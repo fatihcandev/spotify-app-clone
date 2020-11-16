@@ -7,7 +7,7 @@ import styles from "./styles";
 interface IStyledInputProps {
   title: string;
   value: string;
-  type?: "username" | "password";
+  type?: "emailAddress" | "username" | "password";
   style?: StyleProp<any>;
   onChange: (v: string) => void;
 }
