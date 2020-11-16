@@ -2,6 +2,12 @@ export type RootStackParamList = {
   Root: undefined;
 };
 
+export type AuthStackParamList = {
+  Onboarding: undefined;
+  SignUp: undefined;
+  LogIn: undefined;
+};
+
 export type BottomTabParamList = {
   Home: undefined;
   Search: undefined;
@@ -44,7 +50,6 @@ export interface ISong {
   name: string;
   artist: string;
   cover: any;
-  playing: boolean;
 }
 
 export enum IconName {
@@ -60,5 +65,7 @@ export enum IconName {
   next = "next",
   heart = "heart",
   heartSolid = "heartSolid",
-  moreV = "moreV"
+  moreV = "moreV",
+  logo = "logo",
+  logoText = "logoText"
 }
