@@ -66,6 +66,8 @@ export enum IconName {
   heart = "heart",
   heartSolid = "heartSolid",
   moreV = "moreV",
-  logo = "logo",
-  logoText = "logoText"
+  spotify = "spotify",
+  spotifyWithText = "spotifyWithText",
+  google = "google",
+  facebook = "facebook"
 }

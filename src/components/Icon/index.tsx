@@ -39,10 +39,14 @@ const Icon: React.FC<IconProps> = ({ name, color, ...props }) => {
       return <Icons.HeartSolid color={color} {...props} />;
     case IconName.moreV:
       return <Icons.MoreVertical color={color} {...props} />;
-    case IconName.logo:
-      return <Icons.Logo color={color} {...props} />;
-    case IconName.logoText:
-      return <Icons.LogoText color={color} {...props} />;
+    case IconName.spotify:
+      return <Icons.Spotify color={color} {...props} />;
+    case IconName.spotifyWithText:
+      return <Icons.SpotifyWithText color={color} {...props} />;
+    case IconName.google:
+      return <Icons.Google color={color} {...props} />;
+    case IconName.facebook:
+      return <Icons.Facebook color={color} {...props} />;
     default:
       return null;
   }
