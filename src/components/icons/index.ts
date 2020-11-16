@@ -11,3 +11,5 @@ export { default as Previous } from "./Previous";
 export { default as SearchSolid } from "./SearchSolid";
 export { default as Search } from "./Search";
 export { default as MoreVertical } from "./MoreVertical";
+export { default as Logo } from "./Logo";
+export { default as LogoText } from "./LogoText";
