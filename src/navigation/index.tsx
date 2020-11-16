@@ -9,6 +9,7 @@ import SignUp from "../screens/SignUp";
 import BottomTabNavigator from "./BottomTabNavigator";
 
 import { AuthStackParamList, RootStackParamList } from "../types";
+import Colors from "../constants/Colors";
 
 export const Navigation = () => {
   return (
@@ -31,9 +32,24 @@ const AuthStack = createStackNavigator<AuthStackParamList>();
 
 export const AuthNavigator = () => {
   return (
-    <AuthStack.Navigator headerMode="none">
-      <AuthStack.Screen name="Onboarding" component={Onboarding} />
-      <AuthStack.Screen name="LogIn" component={LogIn} />
+    <AuthStack.Navigator>
+      <AuthStack.Screen
+        name="Onboarding"
+        component={Onboarding}
+        options={{ headerShown: false }}
+      />
+      <AuthStack.Screen
+        name="LogIn"
+        component={LogIn}
+        options={{
+          headerShown: true,
+          headerTitle: "",
+          headerStyle: {
+            backgroundColor: Colors.black
+          },
+          headerTintColor: Colors.white
+        }}
+      />
       <AuthStack.Screen name="SignUp" component={SignUp} />
     </AuthStack.Navigator>
   );

@@ -9,13 +9,10 @@ const TextSection: React.FC = () => {
   return (
     <View style={styles.textSection}>
       <StyledText bold style={styles.text}>
-        Free music.
-      </StyledText>
-      <StyledText bold style={styles.text}>
         Millions of songs.
       </StyledText>
-      <StyledText bold style={styles.smallText}>
-        No credit card required. Simply sign up or login to listen for free.
+      <StyledText bold style={styles.text}>
+        Free on Spotify.
       </StyledText>
     </View>
   );

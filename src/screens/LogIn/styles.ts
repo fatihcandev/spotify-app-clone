@@ -7,23 +7,18 @@ export default StyleSheet.create({
     padding: 20,
     backgroundColor: Colors.black
   },
-  logo: {
-    flexDirection: "row",
-    justifyContent: "center"
-  },
-  form: {
-    flex: 1,
-    justifyContent: "center"
-  },
   input: {
-    marginBottom: 20
+    marginBottom: 40
   },
   button: {
+    width: "40%",
+    alignSelf: "center",
     marginBottom: 20
   },
   forgotTextContainer: {
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom: 20
   },
   forgotText: {
     color: Colors.lightGray

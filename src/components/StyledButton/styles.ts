@@ -6,7 +6,7 @@ const commonStyles: StyleProp<ViewStyle> = {
   justifyContent: "center",
   alignItems: "center",
   paddingHorizontal: 48,
-  paddingVertical: 16,
+  paddingVertical: 12,
   borderRadius: 99
 };
 
@@ -31,13 +31,10 @@ export default StyleSheet.create({
   textSecondary: {
     color: Colors.black
   },
-  textOutlined: {
-    color: Colors.border
-  },
   iconLeft: {
-    marginRight: 5
+    marginRight: 10
   },
   iconRight: {
-    marginLeft: 5
+    marginLeft: 10
   }
 });

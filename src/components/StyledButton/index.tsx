@@ -65,12 +65,10 @@ const getStyle = (
 
 const getTextStyle = (variant: string) => {
   switch (variant) {
-    case "primary":
+    case "primary" || "outlined":
       return styles.textPrimary;
     case "secondary":
       return styles.textSecondary;
-    case "outlined":
-      return styles.textOutlined;
     default:
       return styles.textPrimary;
   }

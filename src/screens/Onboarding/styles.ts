@@ -5,11 +5,10 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.black,
-    padding: 20
+    paddingHorizontal: 40
   },
   logo: {
-    flexDirection: "row",
-    justifyContent: "center"
+    marginBottom: 20
   },
   content: {
     flex: 1,
@@ -17,22 +16,22 @@ export default StyleSheet.create({
     alignItems: "center"
   },
   buttonSection: {
-    width: "70%"
+    width: "100%"
   },
   textSection: {
-    marginBottom: 20
+    marginBottom: 80
   },
   text: {
     color: Colors.white,
-    fontSize: 28,
-    textAlign: "center"
-  },
-  smallText: {
-    color: Colors.white,
-    fontSize: 16,
+    fontSize: 40,
     textAlign: "center"
   },
   signUpButton: {
     marginBottom: 10
+  },
+  loginText: {
+    marginTop: 15,
+    color: Colors.white,
+    textAlign: "center"
   }
 });
