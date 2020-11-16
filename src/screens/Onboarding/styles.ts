@@ -4,7 +4,7 @@ import Colors from "../../constants/Colors";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: Colors.black,
     padding: 20
   },
   logo: {
@@ -25,7 +25,6 @@ export default StyleSheet.create({
   text: {
     color: Colors.white,
     fontSize: 28,
-    fontWeight: "bold",
     textAlign: "center"
   },
   smallText: {
