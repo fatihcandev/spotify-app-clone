@@ -1,21 +1,19 @@
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 export default function useCachedResources() {
-  const [isLoadingComplete, setLoadingComplete] = React.useState(false);
+  const [isLoadingComplete, setLoadingComplete] = useState<boolean>(false);
 
   // Load any resources or data that we need prior to rendering the app
-  React.useEffect(() => {
+  useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHideAsync();
 
         // Load fonts
         await Font.loadAsync({
-          ...Ionicons.font,
-          "space-mono": require("../../assets/fonts/SpaceMono-Regular.ttf")
+          "Proxima Nova": require("../../assets/fonts/proxima_nova_regular.otf")
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
