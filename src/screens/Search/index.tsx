@@ -3,10 +3,12 @@ import { View, Text } from "react-native";
 
 import styles from "./styles";
 
-export default function Search() {
+const Search: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>Search</Text>
     </View>
   );
-}
+};
+
+export default Search;

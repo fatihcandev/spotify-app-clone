@@ -3,10 +3,12 @@ import { View, Text } from "react-native";
 
 import styles from "./styles";
 
-export default function Library() {
+const Library: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>Library</Text>
     </View>
   );
-}
+};
+
+export default Library;

@@ -12,52 +12,40 @@ interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({ name, color, ...props }) => {
-  let icon: any;
   switch (name) {
     case IconName.home:
-      icon = <Icons.Home color={color} {...props} />;
-      break;
+      return <Icons.Home color={color} {...props} />;
     case IconName.homeSolid:
-      icon = <Icons.HomeSolid color={color} {...props} />;
-      break;
+      return <Icons.HomeSolid color={color} {...props} />;
     case IconName.search:
-      icon = <Icons.Search color={color} {...props} />;
-      break;
+      return <Icons.Search color={color} {...props} />;
     case IconName.searchSolid:
-      icon = <Icons.SearchSolid color={color} {...props} />;
-      break;
+      return <Icons.SearchSolid color={color} {...props} />;
     case IconName.library:
-      icon = <Icons.Library color={color} {...props} />;
-      break;
+      return <Icons.Library color={color} {...props} />;
     case IconName.librarySolid:
-      icon = <Icons.LibrarySolid color={color} {...props} />;
-      break;
+      return <Icons.LibrarySolid color={color} {...props} />;
     case IconName.play:
-      icon = <Icons.Play color={color} {...props} />;
-      break;
+      return <Icons.Play color={color} {...props} />;
     case IconName.pause:
-      icon = <Icons.Pause color={color} {...props} />;
-      break;
+      return <Icons.Pause color={color} {...props} />;
     case IconName.previous:
-      icon = <Icons.Previous color={color} {...props} />;
-      break;
+      return <Icons.Previous color={color} {...props} />;
     case IconName.next:
-      icon = <Icons.Next color={color} {...props} />;
-      break;
+      return <Icons.Next color={color} {...props} />;
     case IconName.heart:
-      icon = <Icons.Heart color={color} {...props} />;
-      break;
+      return <Icons.Heart color={color} {...props} />;
     case IconName.heartSolid:
-      icon = <Icons.HeartSolid color={color} {...props} />;
-      break;
+      return <Icons.HeartSolid color={color} {...props} />;
     case IconName.moreV:
-      icon = <Icons.MoreVertical color={color} {...props} />;
-      break;
+      return <Icons.MoreVertical color={color} {...props} />;
+    case IconName.logo:
+      return <Icons.Logo color={color} {...props} />;
+    case IconName.logoText:
+      return <Icons.LogoText color={color} {...props} />;
     default:
-      icon = undefined;
-      break;
+      return null;
   }
-  return icon;
 };
 
 export default Icon;
