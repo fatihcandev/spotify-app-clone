@@ -7,14 +7,13 @@ import { IHomeCardSquareData, ISong } from "../../types";
 import { recentlyPlayedHorizontal } from "../../data/recentlyPlayedHorizontal";
 import { AppContext, PLAY_SONG } from "../../context";
 
-const RecentlyPlayedHorizontal = () => {
+const RecentlyPlayedHorizontal: React.FC = () => {
   const { dispatch } = useContext(AppContext);
   const handleCardPress = (song: ISong) => {
     dispatch({
       type: PLAY_SONG,
       data: {
-        song,
-        songPlaying: true
+        song
       }
     });
   };
@@ -30,8 +29,7 @@ const RecentlyPlayedHorizontal = () => {
           handleCardPress({
             name,
             artist,
-            cover,
-            playing: true
+            cover
           })
         }
       />
