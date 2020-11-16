@@ -3,7 +3,6 @@ import {
   ActivityIndicator,
   StyleProp,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
   ViewStyle
@@ -11,6 +10,7 @@ import {
 
 import Colors from "../../constants/Colors";
 import Icon from "../Icon";
+import StyledText from "../StyledText";
 
 import styles from "./styles";
 
@@ -101,10 +101,14 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
           <View style={iconLeft ? styles.iconLeft : styles.iconRight}>
             <Icon name={iconLeft! || iconRight!} color={getColor(variant)} />
           </View>
-          <Text style={getTextStyle(variant)}>{children}</Text>
+          <StyledText bold style={getTextStyle(variant)}>
+            {children}
+          </StyledText>
         </>
       ) : (
-        <Text style={getTextStyle(variant)}>{children}</Text>
+        <StyledText bold style={getTextStyle(variant)}>
+          {children}
+        </StyledText>
       )}
     </TouchableOpacity>
   );

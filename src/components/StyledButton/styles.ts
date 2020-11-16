@@ -1,4 +1,4 @@
-import { StyleProp, StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, ViewStyle } from "react-native";
 import Colors from "../../constants/Colors";
 
 const commonStyles: StyleProp<ViewStyle> = {
@@ -8,11 +8,6 @@ const commonStyles: StyleProp<ViewStyle> = {
   paddingHorizontal: 48,
   paddingVertical: 16,
   borderRadius: 99
-};
-
-const commonTextStyles: StyleProp<TextStyle> = {
-  fontSize: 16,
-  fontWeight: "bold"
 };
 
 export default StyleSheet.create({
@@ -31,15 +26,12 @@ export default StyleSheet.create({
     borderWidth: 2
   },
   textPrimary: {
-    ...commonTextStyles,
     color: Colors.white
   },
   textSecondary: {
-    ...commonTextStyles,
     color: Colors.black
   },
   textOutlined: {
-    ...commonTextStyles,
     color: Colors.border
   },
   iconLeft: {
