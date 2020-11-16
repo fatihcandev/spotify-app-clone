@@ -4,25 +4,28 @@ import {
   StyleProp,
   StyleSheet,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  View,
+  ViewStyle
 } from "react-native";
 
 import Colors from "../../constants/Colors";
+import Icon from "../Icon";
 
 import styles from "./styles";
 
 interface IStyledButtonProps {
   variant?: "primary" | "secondary" | "outlined";
   ariaLabel: string;
-  loading?: boolean;
-  disabled?: boolean;
   iconRight?: string;
   iconLeft?: string;
+  loading?: boolean;
+  disabled?: boolean;
   style?: StyleProp<any>;
   onPress: () => void;
 }
 
-const getAiColor = (variant: string) => {
+const getColor = (variant: string) => {
   switch (variant) {
     case "primary":
       return Colors.white;
@@ -35,14 +38,26 @@ const getAiColor = (variant: string) => {
   }
 };
 
-const getStyle = (variant: string) => {
+const getStyle = (
+  variant: string,
+  rightIcon?: string
+): StyleProp<ViewStyle> => {
   switch (variant) {
     case "primary":
-      return styles.primary;
+      return {
+        ...styles.primary,
+        flexDirection: rightIcon ? "row-reverse" : "row"
+      };
     case "secondary":
-      return styles.secondary;
+      return {
+        ...styles.secondary,
+        flexDirection: rightIcon ? "row-reverse" : "row"
+      };
     case "outlined":
-      return styles.outlined;
+      return {
+        ...styles.outlined,
+        flexDirection: rightIcon ? "row-reverse" : "row"
+      };
     default:
       return styles.primary;
   }
@@ -64,6 +79,8 @@ const getTextStyle = (variant: string) => {
 const StyledButton: React.FC<IStyledButtonProps> = ({
   variant = "primary",
   ariaLabel,
+  iconLeft,
+  iconRight,
   loading,
   disabled,
   style,
@@ -73,12 +90,19 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={StyleSheet.compose(getStyle(variant), style)}
+      style={StyleSheet.compose(getStyle(variant, iconRight), style)}
       accessibilityLabel={ariaLabel}
       disabled={disabled}
     >
       {loading ? (
-        <ActivityIndicator color={getAiColor(variant)} />
+        <ActivityIndicator color={getColor(variant)} />
+      ) : iconLeft || iconRight ? (
+        <>
+          <View style={iconLeft ? styles.iconLeft : styles.iconRight}>
+            <Icon name={iconLeft! || iconRight!} color={getColor(variant)} />
+          </View>
+          <Text style={getTextStyle(variant)}>{children}</Text>
+        </>
       ) : (
         <Text style={getTextStyle(variant)}>{children}</Text>
       )}

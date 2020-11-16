@@ -30,7 +30,6 @@ export default StyleSheet.create({
     borderColor: Colors.border,
     borderWidth: 2
   },
-
   textPrimary: {
     ...commonTextStyles,
     color: Colors.white
@@ -42,5 +41,11 @@ export default StyleSheet.create({
   textOutlined: {
     ...commonTextStyles,
     color: Colors.border
+  },
+  iconLeft: {
+    marginRight: 5
+  },
+  iconRight: {
+    marginLeft: 5
   }
 });
