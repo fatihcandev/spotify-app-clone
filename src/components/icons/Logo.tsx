@@ -8,7 +8,7 @@ function SvgLogo(props: any) {
       width={24}
       viewBox="0 0 24 24"
       aria-labelledby="spotify-logo-icon"
-      className="''"
+      className=""
       {...props}
     >
       <Path
