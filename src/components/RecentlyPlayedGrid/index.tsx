@@ -1,11 +1,11 @@
 import React from "react";
 import { FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import HomeCard from "../HomeCard";
 
 import { recentlyPlayedGridData } from "../../data/recentlyPlayedGrid";
 import { IHomeCardData } from "../../types";
-import { useNavigation } from "@react-navigation/native";
 
 const RecentlyPlayedGrid: React.FC = () => {
   const navigation = useNavigation();
