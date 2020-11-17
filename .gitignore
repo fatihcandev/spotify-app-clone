@@ -9,5 +9,8 @@ npm-debug.*
 web-build/
 yarn.lock
 
+.expo/
+.expo-shared/
+
 # macOS
 .DS_Store
