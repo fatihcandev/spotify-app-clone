@@ -3,7 +3,6 @@ import { Keyboard, TouchableOpacity, View } from "react-native";
 
 import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
-import StyledText from "../../components/StyledText";
 
 import styles from "./styles";
 
@@ -15,12 +14,14 @@ const LogIn: React.FC = () => {
     Keyboard.dismiss();
   };
 
+  let isLoginButtonDisabled = username.length === 0 || password.length === 0;
+
   return (
     <TouchableOpacity style={styles.container} onPress={handleOutsideClick}>
       <StyledInput
         title="Email or username"
         value={username}
-        type="username"
+        type="emailAddress"
         onChange={v => setUsername(v)}
         style={styles.input}
       />
@@ -32,15 +33,24 @@ const LogIn: React.FC = () => {
         style={styles.input}
       />
       <StyledButton
-        variant="primary"
+        variant="secondary"
         ariaLabel="log in"
         onPress={() => {}}
         style={styles.button}
+        disabled={isLoginButtonDisabled}
       >
         LOG IN
       </StyledButton>
-      <View style={styles.forgotTextContainer}>
-        <StyledText style={styles.forgotText}>Forgot password?</StyledText>
+      <View style={styles.withoutPassContainer}>
+        <StyledButton
+          variant="outlined"
+          ariaLabel="log in without password"
+          onPress={() => {}}
+          style={styles.withoutPassButton}
+          textStyle={styles.withoutPassButtonText}
+        >
+          LOG IN WITHOUT PASSWORD
+        </StyledButton>
       </View>
     </TouchableOpacity>
   );

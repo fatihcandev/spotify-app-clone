@@ -13,14 +13,17 @@ export default StyleSheet.create({
   button: {
     width: "40%",
     alignSelf: "center",
-    marginBottom: 20
+    marginBottom: 40
   },
-  forgotTextContainer: {
+  withoutPassContainer: {
     flexDirection: "row",
-    justifyContent: "center",
-    marginBottom: 20
+    justifyContent: "center"
   },
-  forgotText: {
-    color: Colors.lightGray
+  withoutPassButton: {
+    paddingVertical: 5,
+    paddingHorizontal: 16
+  },
+  withoutPassButtonText: {
+    fontSize: 13
   }
 });
