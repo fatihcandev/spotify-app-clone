@@ -5,7 +5,6 @@ const commonStyles: StyleProp<ViewStyle> = {
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "center",
-  paddingHorizontal: 48,
   paddingVertical: 14,
   borderRadius: 99
 };

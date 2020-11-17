@@ -1,29 +1,31 @@
 import { StyleSheet } from "react-native";
 import Colors from "../../constants/Colors";
+import Layout from "../../constants/Layout";
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.black,
-    paddingHorizontal: 40
+    paddingHorizontal: 40,
+    paddingBottom: 40
   },
   logo: {
     marginBottom: 20
   },
   content: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center"
   },
   buttonSection: {
     width: "100%"
   },
   textSection: {
-    marginBottom: 80
+    marginBottom: 70
   },
   text: {
     color: Colors.white,
-    fontSize: 40,
+    fontSize: Layout.isSmallDevice ? 30 : 40,
     textAlign: "center"
   },
   signUpButton: {
