@@ -11,7 +11,11 @@ interface IStyledTextProps {
 const StyledText: React.FC<IStyledTextProps> = ({ bold, style, children }) => {
   const getStyle = (): StyleProp<TextStyle> => {
     if (bold) {
-      return { ...styles.text, fontWeight: "bold" };
+      return {
+        ...styles.text,
+        fontWeight: "bold",
+        fontFamily: "proxima-nova-bold"
+      };
     } else {
       return styles.text;
     }
