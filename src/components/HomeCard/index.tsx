@@ -12,12 +12,7 @@ interface IHomeCardProps {
 const HomeCard: React.FC<IHomeCardProps> = ({ image, text, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: image
-        }}
-      />
+      <Image style={styles.image} source={image} />
       <View style={styles.textContainer}>
         <Text style={styles.text}>{text}</Text>
       </View>

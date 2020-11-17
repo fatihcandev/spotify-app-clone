@@ -16,12 +16,7 @@ const HomeCardSquare: React.FC<IHomeCardSquareProps> = ({
 }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image
-        source={{
-          uri: image
-        }}
-        style={styles.image}
-      />
+      <Image source={image} style={styles.image} />
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
