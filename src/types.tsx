@@ -1,3 +1,6 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+
 export type RootStackParamList = {
   Root: undefined;
 };
@@ -5,9 +8,26 @@ export type RootStackParamList = {
 export type AuthStackParamList = {
   Onboarding: undefined;
   SignUp: undefined;
-  SignUpPassword: undefined;
+  SignUpPassword: {
+    email: string;
+  };
   LogIn: undefined;
 };
+
+export type OnboardingNavigationProp = StackNavigationProp<
+  AuthStackParamList,
+  "Onboarding"
+>;
+
+export type SignUpNavigationProp = StackNavigationProp<
+  AuthStackParamList,
+  "SignUp"
+>;
+
+export type SignUpPasswordRouteProp = RouteProp<
+  AuthStackParamList,
+  "SignUpPassword"
+>;
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -24,6 +44,11 @@ export type HomeParamList = {
   DailyMixOne: undefined;
   DailyMixTwo: undefined;
 };
+
+export type PlaylistNavigationProp = StackNavigationProp<
+  HomeParamList,
+  "HomeScreen"
+>;
 
 export type SearchParamList = {
   SearchScreen: undefined;

@@ -1,15 +1,18 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import HomeCard from "../HomeCard";
 
+import { IHomeCardData, PlaylistNavigationProp } from "../../types";
 import { recentlyPlayedGridData } from "../../data/recentlyPlayedGrid";
-import { IHomeCardData } from "../../types";
 
-const RecentlyPlayedGrid: React.FC = () => {
-  const navigation = useNavigation();
+interface IRecentlyPlayedGridProps {
+  navigation: PlaylistNavigationProp;
+}
 
+const RecentlyPlayedGrid: React.FC<IRecentlyPlayedGridProps> = ({
+  navigation
+}) => {
   const renderItem = (item: IHomeCardData) => (
     <HomeCard
       key={item.text}

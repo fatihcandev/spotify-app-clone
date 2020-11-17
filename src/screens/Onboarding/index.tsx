@@ -1,18 +1,20 @@
 import React from "react";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import TextSection from "./TextSection";
 import Buttons from "./Buttons";
 import Icon from "../../components/Icon";
 
+import { OnboardingNavigationProp } from "../../types";
 import Colors from "../../constants/Colors";
 
 import styles from "./styles";
 
-const Onboarding: React.FC = () => {
-  const navigation = useNavigation();
+interface IOnboardingProps {
+  navigation: OnboardingNavigationProp;
+}
 
+const Onboarding: React.FC<IOnboardingProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>

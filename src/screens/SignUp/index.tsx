@@ -1,25 +1,34 @@
 import React, { useState } from "react";
 import { Keyboard, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
 import StyledText from "../../components/StyledText";
 
 import { validateEmail } from "../../utils/validation";
+import { SignUpNavigationProp } from "../../types";
 
 import styles from "./styles";
 
-const SignUp: React.FC = () => {
+interface ISignUpProps {
+  navigation: SignUpNavigationProp;
+}
+
+const SignUp: React.FC<ISignUpProps> = ({ navigation }) => {
   const [email, setEmail] = useState<string>("");
-  const navigation = useNavigation();
+
+  let isEmailValid = validateEmail(email);
+  let isLoginButtonDisabled = email.length === 0 || !isEmailValid;
 
   const handleOutsideClick = () => {
     Keyboard.dismiss();
   };
 
-  let isEmailValid = validateEmail(email);
-  let isLoginButtonDisabled = email.length === 0 || !isEmailValid;
+  const handleNextClick = () => {
+    navigation.navigate("SignUpPassword", {
+      email: email
+    });
+  };
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleOutsideClick}>
@@ -37,11 +46,7 @@ const SignUp: React.FC = () => {
       <StyledButton
         variant="secondary"
         ariaLabel="log in"
-        onPress={() =>
-          navigation.navigate("SignUpPassword", {
-            email: email
-          })
-        }
+        onPress={handleNextClick}
         style={styles.button}
         disabled={isLoginButtonDisabled}
       >

@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import { Keyboard, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
 import StyledText from "../../components/StyledText";
 
 import styles from "./styles";
+import { SignUpPasswordRouteProp } from "../../types";
 
-const SignUpPassword: React.FC = () => {
+interface ISignUpPasswordProps {
+  route: SignUpPasswordRouteProp;
+}
+
+const SignUpPassword: React.FC<ISignUpPasswordProps> = ({ route }) => {
   const [password, setPassword] = useState<string>("");
-  const navigation = useNavigation();
-  // const route = useRoute();
+
+  let isLoginButtonDisabled = password.length < 8;
 
   const handleOutsideClick = () => {
     Keyboard.dismiss();
   };
 
-  let isLoginButtonDisabled = password.length < 8;
+  console.log(route.params.email);
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleOutsideClick}>
@@ -35,7 +39,7 @@ const SignUpPassword: React.FC = () => {
       <StyledButton
         variant="secondary"
         ariaLabel="log in"
-        onPress={() => navigation.navigate("SignUpPassword")}
+        onPress={() => {}}
         style={styles.button}
         disabled={isLoginButtonDisabled}
       >
