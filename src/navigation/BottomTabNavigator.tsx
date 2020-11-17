@@ -8,8 +8,10 @@ import LibraryScreen from "../screens/Library";
 import Playlist from "../screens/Playlist";
 import Icon from "../components/Icon";
 
-import { PlaylistNavigationOptions } from "../constants/PlaylistNavigationOptions";
-import Colors from "../constants/Colors";
+import {
+  bottomTabBarOptions,
+  playlistScreenOptions
+} from "../constants/navigationOptions";
 import {
   BottomTabParamList,
   HomeParamList,
@@ -23,21 +25,7 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      tabBarOptions={{
-        inactiveTintColor: Colors.lightGray,
-        activeTintColor: Colors.white,
-        labelStyle: {
-          marginTop: 5,
-          fontSize: 12
-        },
-        style: {
-          paddingTop: 9,
-          paddingBottom: 7,
-          height: 65,
-          backgroundColor: Colors.darkGray,
-          borderTopWidth: 0
-        }
-      }}
+      tabBarOptions={bottomTabBarOptions}
     >
       <BottomTab.Screen
         name="Home"
@@ -86,7 +74,7 @@ function HomeNavigator() {
         name="OnRepeat"
         children={() => <Playlist title="On Repeat" />}
         options={{
-          ...PlaylistNavigationOptions,
+          ...playlistScreenOptions,
           headerTitle: "On Repeat"
         }}
       />
@@ -94,7 +82,7 @@ function HomeNavigator() {
         name="DiscoverWeekly"
         children={() => <Playlist title="Discover Weekly" />}
         options={{
-          ...PlaylistNavigationOptions,
+          ...playlistScreenOptions,
           headerTitle: "Discover Weekly"
         }}
       />
