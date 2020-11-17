@@ -5,6 +5,7 @@ export type RootStackParamList = {
 export type AuthStackParamList = {
   Onboarding: undefined;
   SignUp: undefined;
+  SignUpPassword: undefined;
   LogIn: undefined;
 };
 
