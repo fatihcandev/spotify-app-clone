@@ -6,42 +6,36 @@ import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
 import StyledText from "../../components/StyledText";
 
-import { validateEmail } from "../../utils/validation";
-
 import styles from "./styles";
 
-const SignUp: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
+const SignUpPassword: React.FC = () => {
+  const [password, setPassword] = useState<string>("");
   const navigation = useNavigation();
+  // const route = useRoute();
 
   const handleOutsideClick = () => {
     Keyboard.dismiss();
   };
 
-  let isEmailValid = validateEmail(email);
-  let isLoginButtonDisabled = email.length === 0 || !isEmailValid;
+  let isLoginButtonDisabled = password.length < 8;
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleOutsideClick}>
       <StyledInput
-        title="What's your email?"
-        value={email}
-        type="emailAddress"
-        onChange={v => setEmail(v)}
-        keyboardType="email-address"
-        style={styles.input}
+        title="Create a password"
+        value={password}
+        type="password"
+        onChange={v => setPassword(v)}
+        keyboardType="default"
+        style={styles.passwordInput}
       />
       <StyledText style={styles.smallText}>
-        You'll need to confirm this email later.
+        Use at least 8 characters
       </StyledText>
       <StyledButton
         variant="secondary"
         ariaLabel="log in"
-        onPress={() =>
-          navigation.navigate("SignUpPassword", {
-            email: email
-          })
-        }
+        onPress={() => navigation.navigate("SignUpPassword")}
         style={styles.button}
         disabled={isLoginButtonDisabled}
       >
@@ -51,4 +45,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default SignUpPassword;
