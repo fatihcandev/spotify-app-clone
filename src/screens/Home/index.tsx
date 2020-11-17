@@ -1,9 +1,8 @@
 import React from "react";
-
 import { FlatList, View } from "react-native";
+
 import RecentlyPlayedGrid from "../../components/RecentlyPlayedGrid";
 import RecentlyPlayedHorizontal from "../../components/RecentlyPlayedHorizontal";
-
 import Title from "../../components/Title";
 
 import styles from "./styles";

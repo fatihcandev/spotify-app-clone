@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleProp, StyleSheet, Text } from "react-native";
+
 import styles from "./styles";
 
 interface ITitleProps {
