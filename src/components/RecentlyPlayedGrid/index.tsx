@@ -3,11 +3,11 @@ import { FlatList } from "react-native";
 
 import HomeCard from "../HomeCard";
 
-import { IHomeCardData, PlaylistNavigationProp } from "../../types";
+import { IHomeCardData, HomeNavigationProp } from "../../types";
 import { recentlyPlayedGridData } from "../../data/recentlyPlayedGrid";
 
 interface IRecentlyPlayedGridProps {
-  navigation: PlaylistNavigationProp;
+  navigation: HomeNavigationProp;
 }
 
 const RecentlyPlayedGrid: React.FC<IRecentlyPlayedGridProps> = ({

@@ -45,7 +45,7 @@ export type HomeParamList = {
   DailyMixTwo: undefined;
 };
 
-export type PlaylistNavigationProp = StackNavigationProp<
+export type HomeNavigationProp = StackNavigationProp<
   HomeParamList,
   "HomeScreen"
 >;
