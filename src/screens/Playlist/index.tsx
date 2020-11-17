@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Text } from "react-native";
 
 import styles from "./styles";
 
@@ -9,9 +10,9 @@ interface IPlaylistProps {
 
 const Playlist: React.FC<IPlaylistProps> = ({ title }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>{title}</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

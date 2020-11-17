@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { Keyboard, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { TouchableOpacity } from "react-native";
 
 import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
 import StyledText from "../../components/StyledText";
 
-import styles from "./styles";
+import { handleOutsideClick } from "../../utils/handleOutsideClick";
+import { safeAreaStyle } from "../../constants/safeAreaStyle";
 import { SignUpPasswordRouteProp } from "../../types";
+
+import styles from "./styles";
 
 interface ISignUpPasswordProps {
   route: SignUpPasswordRouteProp;
@@ -17,34 +21,32 @@ const SignUpPassword: React.FC<ISignUpPasswordProps> = ({ route }) => {
 
   let isLoginButtonDisabled = password.length < 8;
 
-  const handleOutsideClick = () => {
-    Keyboard.dismiss();
-  };
-
   console.log(route.params.email);
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleOutsideClick}>
-      <StyledInput
-        title="Create a password"
-        value={password}
-        type="password"
-        onChange={v => setPassword(v)}
-        keyboardType="default"
-        style={styles.passwordInput}
-      />
-      <StyledText style={styles.smallText}>
-        Use at least 8 characters
-      </StyledText>
-      <StyledButton
-        variant="secondary"
-        ariaLabel="log in"
-        onPress={() => {}}
-        style={styles.button}
-        disabled={isLoginButtonDisabled}
-      >
-        NEXT
-      </StyledButton>
+      <SafeAreaView style={safeAreaStyle}>
+        <StyledInput
+          title="Create a password"
+          value={password}
+          type="password"
+          onChange={v => setPassword(v)}
+          keyboardType="default"
+          style={styles.passwordInput}
+        />
+        <StyledText style={styles.smallText}>
+          Use at least 8 characters
+        </StyledText>
+        <StyledButton
+          variant="secondary"
+          ariaLabel="log in"
+          onPress={() => {}}
+          style={styles.button}
+          disabled={isLoginButtonDisabled}
+        >
+          NEXT
+        </StyledButton>
+      </SafeAreaView>
     </TouchableOpacity>
   );
 };

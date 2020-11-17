@@ -1,4 +1,5 @@
 import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { View } from "react-native";
 
 import TextSection from "./TextSection";
@@ -16,7 +17,7 @@ interface IOnboardingProps {
 
 const Onboarding: React.FC<IOnboardingProps> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <View style={styles.logo}>
           <Icon name="spotify" width={50} height={50} color={Colors.white} />
@@ -29,7 +30,7 @@ const Onboarding: React.FC<IOnboardingProps> = ({ navigation }) => {
           onFacebookPress={() => {}}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
