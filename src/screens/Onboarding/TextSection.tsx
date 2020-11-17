@@ -8,12 +8,8 @@ import styles from "./styles";
 const TextSection: React.FC = () => {
   return (
     <View style={styles.textSection}>
-      <StyledText bold style={styles.text}>
-        Millions of songs.
-      </StyledText>
-      <StyledText bold style={styles.text}>
-        Free on Spotify.
-      </StyledText>
+      <StyledText style={styles.text}>Millions of songs.</StyledText>
+      <StyledText style={styles.text}>Free on Spotify.</StyledText>
     </View>
   );
 };

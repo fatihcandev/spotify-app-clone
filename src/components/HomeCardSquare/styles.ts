@@ -13,8 +13,6 @@ export default StyleSheet.create({
     marginBottom: 10
   },
   text: {
-    fontSize: 16,
-    fontWeight: "bold",
     color: Colors.white
   }
 });

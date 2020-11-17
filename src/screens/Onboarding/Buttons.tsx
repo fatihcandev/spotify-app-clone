@@ -48,9 +48,7 @@ const Buttons: React.FC<IButtonsProps> = ({
         Continue with Facebook
       </StyledButton>
       <TouchableOpacity onPress={onLogInPress}>
-        <StyledText bold style={styles.loginText}>
-          Log in
-        </StyledText>
+        <StyledText style={styles.loginText}>Log in</StyledText>
       </TouchableOpacity>
     </View>
   );

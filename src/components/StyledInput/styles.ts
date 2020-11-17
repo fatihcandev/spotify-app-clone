@@ -7,23 +7,14 @@ export default StyleSheet.create({
     fontSize: 30,
     marginBottom: 10
   },
-  passwordContainer: {
-    flexDirection: "row",
-    position: "relative"
-  },
   input: {
-    width: "100%",
     paddingVertical: 12,
     paddingLeft: 10,
-    fontSize: 17,
+    fontSize: 16,
+    fontFamily: "proxima-nova",
     backgroundColor: Colors.gray,
     color: Colors.white,
     borderWidth: 0,
     borderRadius: 6
-  },
-  eyeIcon: {
-    position: "absolute",
-    top: 14,
-    right: 16
   }
 });

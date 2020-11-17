@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import StyledText from "../StyledText";
 
 import styles from "./styles";
 
@@ -11,8 +12,8 @@ interface ISongDetailsProps {
 const SongDetails: React.FC<ISongDetailsProps> = ({ name, artist }) => {
   return (
     <View>
-      <Text style={styles.songName}>{name}</Text>
-      <Text style={styles.artist}>{artist}</Text>
+      <StyledText style={styles.songName}>{name}</StyledText>
+      <StyledText style={styles.artist}>{artist}</StyledText>
     </View>
   );
 };

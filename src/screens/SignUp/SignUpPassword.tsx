@@ -8,6 +8,7 @@ import StyledText from "../../components/StyledText";
 
 import { handleOutsideClick } from "../../utils/handleOutsideClick";
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
+import Colors from "../../constants/Colors";
 import { SignUpPasswordRouteProp } from "../../types";
 
 import styles from "./styles";
@@ -19,7 +20,7 @@ interface ISignUpPasswordProps {
 const SignUpPassword: React.FC<ISignUpPasswordProps> = ({ route }) => {
   const [password, setPassword] = useState<string>("");
 
-  let isLoginButtonDisabled = password.length < 8;
+  let isButtonDisabled = password.length < 8;
 
   console.log(route.params.email);
 
@@ -32,6 +33,7 @@ const SignUpPassword: React.FC<ISignUpPasswordProps> = ({ route }) => {
           type="password"
           onChange={v => setPassword(v)}
           keyboardType="default"
+          focusedBgColor={Colors.border}
           style={styles.passwordInput}
         />
         <StyledText style={styles.smallText}>
@@ -42,7 +44,7 @@ const SignUpPassword: React.FC<ISignUpPasswordProps> = ({ route }) => {
           ariaLabel="log in"
           onPress={() => {}}
           style={styles.button}
-          disabled={isLoginButtonDisabled}
+          disabled={isButtonDisabled}
         >
           NEXT
         </StyledButton>

@@ -9,6 +9,7 @@ import StyledText from "../../components/StyledText";
 import { handleOutsideClick } from "../../utils/handleOutsideClick";
 import { validateEmail } from "../../utils/validation";
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
+import Colors from "../../constants/Colors";
 import { SignUpNavigationProp } from "../../types";
 
 import styles from "./styles";
@@ -21,7 +22,7 @@ const SignUp: React.FC<ISignUpProps> = ({ navigation }) => {
   const [email, setEmail] = useState<string>("");
 
   let isEmailValid = validateEmail(email);
-  let isLoginButtonDisabled = email.length === 0 || !isEmailValid;
+  let isButtonDisabled = email.length === 0 || !isEmailValid;
 
   const handleNextClick = () => {
     navigation.navigate("SignUpPassword", {
@@ -38,6 +39,7 @@ const SignUp: React.FC<ISignUpProps> = ({ navigation }) => {
           type="emailAddress"
           onChange={v => setEmail(v)}
           keyboardType="email-address"
+          focusedBgColor={Colors.border}
           style={styles.input}
         />
         <StyledText style={styles.smallText}>
@@ -48,7 +50,7 @@ const SignUp: React.FC<ISignUpProps> = ({ navigation }) => {
           ariaLabel="log in"
           onPress={handleNextClick}
           style={styles.button}
-          disabled={isLoginButtonDisabled}
+          disabled={isButtonDisabled}
         >
           NEXT
         </StyledButton>

@@ -2,9 +2,9 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlatList, View } from "react-native";
 
+import StyledText from "../../components/StyledText";
 import RecentlyPlayedGrid from "../../components/RecentlyPlayedGrid";
 import RecentlyPlayedHorizontal from "../../components/RecentlyPlayedHorizontal";
-import Title from "../../components/Title";
 
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
 import { HomeNavigationProp } from "../../types";
@@ -22,11 +22,11 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
         data={[]}
         ListEmptyComponent={() => (
           <View style={styles.container}>
-            <Title style={styles.title}>Good afternoon</Title>
+            <StyledText style={styles.title}>Good afternoon</StyledText>
             <RecentlyPlayedGrid navigation={navigation} />
-            <Title style={styles.title}>Recently played</Title>
+            <StyledText style={styles.title}>Recently played</StyledText>
             <RecentlyPlayedHorizontal />
-            <Title style={styles.title}>Made for you</Title>
+            <StyledText style={styles.title}>Made for you</StyledText>
           </View>
         )}
         renderItem={null}

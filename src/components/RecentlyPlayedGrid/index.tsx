@@ -6,6 +6,8 @@ import HomeCard from "../HomeCard";
 import { IHomeCardData, HomeNavigationProp } from "../../types";
 import { recentlyPlayedGridData } from "../../data/recentlyPlayedGrid";
 
+import styles from "./styles";
+
 interface IRecentlyPlayedGridProps {
   navigation: HomeNavigationProp;
 }
@@ -32,6 +34,7 @@ const RecentlyPlayedGrid: React.FC<IRecentlyPlayedGridProps> = ({
       columnWrapperStyle={{
         justifyContent: "space-between"
       }}
+      style={styles.container}
     />
   );
 };

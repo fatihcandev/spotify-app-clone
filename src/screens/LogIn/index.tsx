@@ -9,10 +9,13 @@ import { handleOutsideClick } from "../../utils/handleOutsideClick";
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
 
 import styles from "./styles";
+import IconButton from "../../components/IconButton";
+import Colors from "../../constants/Colors";
 
 const LogIn: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   let isLoginButtonDisabled = username.length === 0 || password.length === 0;
 
@@ -24,15 +27,26 @@ const LogIn: React.FC = () => {
           value={username}
           type="emailAddress"
           onChange={v => setUsername(v)}
+          focusedBgColor={Colors.border}
           style={styles.input}
         />
-        <StyledInput
-          title="Password"
-          value={password}
-          type="password"
-          onChange={v => setPassword(v)}
-          style={styles.input}
-        />
+        <View style={styles.passwordContainer}>
+          <StyledInput
+            title="Password"
+            value={password}
+            type={showPassword ? "none" : "password"}
+            onChange={v => setPassword(v)}
+            focusedBgColor={Colors.border}
+            style={styles.input}
+          />
+          <IconButton
+            type={showPassword ? "eye" : "eyeSlash"}
+            color={Colors.lightGray}
+            onPress={() => setShowPassword(!showPassword)}
+            ariaLabel={showPassword ? "hide password" : "show password"}
+            style={styles.eyeIcon}
+          />
+        </View>
         <StyledButton
           variant="secondary"
           ariaLabel="log in"

@@ -30,13 +30,10 @@ export default StyleSheet.create({
     paddingVertical: 20
   },
   songName: {
-    fontSize: 15,
-    fontWeight: "bold",
     marginBottom: 5,
     color: Colors.white
   },
   artist: {
-    fontSize: 15,
     color: Colors.lightGray
   },
   icons: {

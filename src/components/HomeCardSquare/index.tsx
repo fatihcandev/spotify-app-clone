@@ -1,5 +1,7 @@
 import React from "react";
-import { Text, Image, TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
+
+import StyledText from "../StyledText";
 
 import styles from "./styles";
 
@@ -17,7 +19,7 @@ const HomeCardSquare: React.FC<IHomeCardSquareProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={image} style={styles.image} />
-      <Text style={styles.text}>{text}</Text>
+      <StyledText style={styles.text}>{text}</StyledText>
     </TouchableOpacity>
   );
 };

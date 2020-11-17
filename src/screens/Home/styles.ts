@@ -10,7 +10,9 @@ export default StyleSheet.create({
     backgroundColor: Colors.black
   },
   title: {
-    marginBottom: 24
+    marginBottom: 24,
+    color: Colors.white,
+    fontSize: 30
   },
   recentlyPlayedGrid: {
     flexDirection: "row",

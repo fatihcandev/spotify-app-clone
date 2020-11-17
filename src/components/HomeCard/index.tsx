@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
+
+import StyledText from "../StyledText";
 
 import styles from "./styles";
 
@@ -14,7 +16,7 @@ const HomeCard: React.FC<IHomeCardProps> = ({ image, text, onPress }) => {
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image style={styles.image} source={image} />
       <View style={styles.textContainer}>
-        <Text style={styles.text}>{text}</Text>
+        <StyledText style={styles.text}>{text}</StyledText>
       </View>
     </TouchableOpacity>
   );

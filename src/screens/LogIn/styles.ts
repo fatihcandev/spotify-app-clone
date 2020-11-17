@@ -10,6 +10,14 @@ export default StyleSheet.create({
   input: {
     marginBottom: 40
   },
+  passwordContainer: {
+    position: "relative"
+  },
+  eyeIcon: {
+    position: "absolute",
+    top: 60,
+    right: 16
+  },
   button: {
     width: "40%",
     alignSelf: "center",

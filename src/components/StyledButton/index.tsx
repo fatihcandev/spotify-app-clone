@@ -124,7 +124,6 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
             <Icon name={iconLeft! || iconRight!} color={getColor(variant)} />
           </View>
           <StyledText
-            bold
             style={StyleSheet.compose(
               getTextStyle(variant, disabled),
               textStyle
@@ -135,7 +134,6 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
         </>
       ) : (
         <StyledText
-          bold
           style={StyleSheet.compose(getTextStyle(variant, disabled), textStyle)}
         >
           {children}

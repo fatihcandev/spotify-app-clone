@@ -16,9 +16,7 @@ export default StyleSheet.create({
     paddingLeft: 9
   },
   text: {
-    color: Colors.white,
-    fontSize: 15,
-    fontWeight: "bold"
+    color: Colors.white
   },
   image: {
     width: 70,
