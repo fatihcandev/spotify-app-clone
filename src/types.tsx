@@ -69,5 +69,7 @@ export enum IconName {
   spotify = "spotify",
   spotifyWithText = "spotifyWithText",
   google = "google",
-  facebook = "facebook"
+  facebook = "facebook",
+  eye = "eye",
+  eyeSlash = "eyeSlash"
 }

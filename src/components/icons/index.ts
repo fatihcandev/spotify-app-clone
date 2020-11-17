@@ -15,3 +15,5 @@ export { default as Spotify } from "./Spotify";
 export { default as SpotifyWithText } from "./SpotifyWithText";
 export { default as Google } from "./Google";
 export { default as Facebook } from "./Facebook";
+export { default as EyeSlash } from "./EyeSlash";
+export { default as Eye } from "./Eye";
