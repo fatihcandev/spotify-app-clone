@@ -15,9 +15,10 @@ import Colors from "../../constants/Colors";
 import styles from "./styles";
 
 interface IStyledInputProps {
-  title: string;
+  title?: string;
   value: string;
   type?: "emailAddress" | "username" | "password";
+  keyboardType?: "email-address" | "default";
   style?: StyleProp<any>;
   onChange: (v: string) => void;
 }
@@ -26,6 +27,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
   title,
   value,
   type,
+  keyboardType,
   style,
   onChange
 }) => {
@@ -41,9 +43,11 @@ const StyledInput: React.FC<IStyledInputProps> = ({
 
   return (
     <View>
-      <StyledText bold style={styles.title}>
-        {title}
-      </StyledText>
+      {title && (
+        <StyledText bold style={styles.title}>
+          {title}
+        </StyledText>
+      )}
       {type === "password" ? (
         <View style={styles.passwordContainer}>
           <TextInput
@@ -51,7 +55,8 @@ const StyledInput: React.FC<IStyledInputProps> = ({
             value={value}
             onChangeText={onChange}
             secureTextEntry={!showPassword}
-            textContentType={type}
+            textContentType="password"
+            keyboardType="default"
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
           />
@@ -69,6 +74,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
           value={value}
           onChangeText={onChange}
           textContentType={type}
+          keyboardType={keyboardType}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
         />
