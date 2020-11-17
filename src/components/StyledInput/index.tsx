@@ -17,6 +17,7 @@ import styles from "./styles";
 interface IStyledInputProps {
   title?: string;
   value: string;
+  placeholder?: string;
   type?: "emailAddress" | "username" | "password";
   keyboardType?: "email-address" | "default";
   style?: StyleProp<any>;
@@ -26,6 +27,7 @@ interface IStyledInputProps {
 const StyledInput: React.FC<IStyledInputProps> = ({
   title,
   value,
+  placeholder,
   type,
   keyboardType,
   style,
@@ -53,6 +55,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
           <TextInput
             style={StyleSheet.compose(getStyle(), style)}
             value={value}
+            placeholder={placeholder}
             onChangeText={onChange}
             secureTextEntry={!showPassword}
             textContentType="password"
@@ -72,6 +75,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
         <TextInput
           style={StyleSheet.compose(getStyle(), style)}
           value={value}
+          placeholder={placeholder}
           onChangeText={onChange}
           textContentType={type}
           keyboardType={keyboardType}
