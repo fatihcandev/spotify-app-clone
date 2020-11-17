@@ -1,15 +1,29 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  StackNavigationOptions
+} from "@react-navigation/stack";
 
 import Onboarding from "../screens/Onboarding";
 import LogIn from "../screens/LogIn";
 import SignUp from "../screens/SignUp";
+import SignUpPassword from "../screens/SignUp/SignUpPassword";
 
 import BottomTabNavigator from "./BottomTabNavigator";
 
 import { AuthStackParamList, RootStackParamList } from "../types";
 import Colors from "../constants/Colors";
+
+const signUpHeaderOptions: StackNavigationOptions = {
+  headerShown: true,
+  headerTitle: "Create account",
+  headerTitleAlign: "center",
+  headerStyle: {
+    backgroundColor: Colors.black
+  },
+  headerTintColor: Colors.white
+};
 
 export const Navigation = () => {
   return (
@@ -50,7 +64,16 @@ export const AuthNavigator = () => {
           headerTintColor: Colors.white
         }}
       />
-      <AuthStack.Screen name="SignUp" component={SignUp} />
+      <AuthStack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{ ...signUpHeaderOptions }}
+      />
+      <AuthStack.Screen
+        name="SignUpPassword"
+        component={SignUpPassword}
+        options={{ ...signUpHeaderOptions }}
+      />
     </AuthStack.Navigator>
   );
 };
