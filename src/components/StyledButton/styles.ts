@@ -6,7 +6,7 @@ const commonStyles: StyleProp<ViewStyle> = {
   justifyContent: "center",
   alignItems: "center",
   paddingHorizontal: 48,
-  paddingVertical: 12,
+  paddingVertical: 14,
   borderRadius: 99
 };
 
