@@ -9,6 +9,18 @@ import Icon from "../components/Icon";
 
 import Colors from "./Colors";
 
+const commonStyles: StackNavigationOptions = {
+  headerShown: true,
+  headerTitleAlign: "center",
+  headerTintColor: Colors.white,
+  headerTitleStyle: {
+    fontFamily: "proxima-nova"
+  },
+  headerStyle: {
+    backgroundColor: Colors.black
+  }
+};
+
 export const horizontalTransitionOptions: StackNavigationOptions = {
   gestureEnabled: true,
   gestureDirection: "horizontal",
@@ -34,36 +46,16 @@ export const bottomTabBarOptions: BottomTabBarOptions = {
 };
 
 export const loginScreenOptions: StackNavigationOptions = {
-  headerShown: true,
-  headerTitle: "",
-  headerStyle: {
-    backgroundColor: Colors.black
-  },
-  headerTintColor: Colors.white
+  ...commonStyles,
+  headerTitle: ""
 };
 
 export const signUpScreenOptions: StackNavigationOptions = {
-  headerShown: true,
   headerTitle: "Create account",
-  headerTitleAlign: "center",
-  headerStyle: {
-    backgroundColor: Colors.black
-  },
-  headerTintColor: Colors.white,
-  headerTitleStyle: {
-    fontFamily: "proxima-nova"
-  }
+  ...commonStyles
 };
 
 export const playlistScreenOptions: StackNavigationOptions = {
-  headerShown: true,
-  headerTintColor: "white",
-  headerTitleAlign: "center",
   headerRight: () => <Icon name="moreV" color={Colors.white} />,
-  headerTitleStyle: {
-    fontFamily: "proxima-nova"
-  },
-  headerStyle: {
-    backgroundColor: Colors.black
-  }
+  ...commonStyles
 };
