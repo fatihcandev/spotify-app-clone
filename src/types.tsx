@@ -72,6 +72,12 @@ export interface IHomeCardSquareData {
   artist: string;
 }
 
+export interface IGenreData {
+  id: string;
+  name: string;
+  genre: "indie" | "rock" | "electronic" | "pop";
+}
+
 export interface ISong {
   name: string;
   artist: string;
