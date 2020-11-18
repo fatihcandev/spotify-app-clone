@@ -1,16 +1,19 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "react-native";
 
 import { AuthNavigation, Navigation } from "./src/navigation";
 import Player from "./src/components/Player";
 
 import { AppProvider } from "./src/context";
-import useCachedResources from "./src/hooks/useCachedResources";
+import useCachedResources from "./src/utils/useCachedResources";
+import useKeyboardOpen from "./src/utils/useKeyboardDidShow";
 
-export default function App() {
+const App: React.FC = () => {
   const isLoadingComplete = useCachedResources();
+  const keyboardOpen = useKeyboardOpen();
   let auth = false;
+
   if (!isLoadingComplete) {
     return null;
   } else {
@@ -18,10 +21,12 @@ export default function App() {
       <SafeAreaProvider>
         <AppProvider>
           {auth ? <Navigation /> : <AuthNavigation />}
-          {auth && <Player />}
-          <StatusBar style="light" />
+          {!keyboardOpen && auth && <Player />}
+          <StatusBar barStyle="light-content" />
         </AppProvider>
       </SafeAreaProvider>
     );
   }
-}
+};
+
+export default App;
