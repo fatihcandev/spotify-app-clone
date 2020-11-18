@@ -26,7 +26,7 @@ export const bottomTabBarOptions: BottomTabBarOptions = {
 
 export const loginScreenOptions: StackNavigationOptions = {
   headerShown: true,
-  headerTitle: undefined,
+  headerTitle: "",
   headerStyle: {
     backgroundColor: Colors.black
   },
