@@ -9,6 +9,8 @@ import {
 
 import StyledText from "../StyledText";
 
+import Colors from "../../constants/Colors";
+
 import styles from "./styles";
 
 interface IStyledInputProps {
@@ -20,6 +22,8 @@ interface IStyledInputProps {
   focusedBgColor?: string;
   style?: StyleProp<any>;
   onChange: (v: string) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 const StyledInput: React.FC<IStyledInputProps> = ({
@@ -30,15 +34,27 @@ const StyledInput: React.FC<IStyledInputProps> = ({
   keyboardType,
   focusedBgColor,
   style,
-  onChange
+  onChange,
+  onFocus,
+  onBlur
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
 
   const getStyle = (): StyleProp<TextStyle> => {
     return {
       ...styles.input,
-      backgroundColor: focused ? focusedBgColor : styles.input.backgroundColor
+      backgroundColor: focused ? focusedBgColor : Colors.white
     };
+  };
+
+  const handleFocus = () => {
+    setFocused(true);
+    onFocus && onFocus();
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+    onBlur && onBlur();
   };
 
   return (
@@ -52,8 +68,8 @@ const StyledInput: React.FC<IStyledInputProps> = ({
         secureTextEntry={type === "password"}
         textContentType={type}
         keyboardType={keyboardType}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
     </View>
   );

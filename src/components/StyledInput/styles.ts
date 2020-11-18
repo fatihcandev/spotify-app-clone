@@ -11,7 +11,6 @@ export default StyleSheet.create({
     paddingLeft: 10,
     fontSize: 16,
     fontFamily: "proxima-nova",
-    backgroundColor: Colors.gray,
     color: Colors.white,
     borderWidth: 0,
     borderRadius: 6

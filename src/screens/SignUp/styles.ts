@@ -8,7 +8,8 @@ export default StyleSheet.create({
     backgroundColor: Colors.black
   },
   input: {
-    marginBottom: 8
+    marginBottom: 8,
+    backgroundColor: Colors.gray
   },
   passwordInput: {
     marginBottom: 8,

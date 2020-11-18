@@ -8,7 +8,8 @@ export default StyleSheet.create({
     backgroundColor: Colors.black
   },
   input: {
-    marginBottom: 40
+    marginBottom: 40,
+    backgroundColor: Colors.gray
   },
   passwordContainer: {
     position: "relative"
