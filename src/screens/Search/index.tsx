@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Animated, StyleProp, TouchableOpacity } from "react-native";
 
 import Input from "./Input";
+import GenreGrid from "./GenreGrid";
 import StyledText from "../../components/StyledText";
 
 import useAnimation from "../../utils/useAnimation";
@@ -10,7 +11,6 @@ import { handleOutsideClick } from "../../utils/handleOutsideClick";
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
 
 import styles from "./styles";
-import GenreGrid from "./GenreGrid";
 
 const Search: React.FC = () => {
   const [searchText, setSearchText] = useState<string>("");
