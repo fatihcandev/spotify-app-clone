@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Keyboard } from "react-native";
 
-const useKeyboardOpen = () => {
+const useIsKeyboardOpen = () => {
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -15,14 +15,18 @@ const useKeyboardOpen = () => {
   }, []);
 
   const _keyboardDidShow = () => {
+    console.log("keyboard did show");
+
     setKeyboardOpen(true);
   };
 
   const _keyboardDidHide = () => {
+    console.log("keyboard did hide");
+
     setKeyboardOpen(false);
   };
 
   return keyboardOpen;
 };
 
-export default useKeyboardOpen;
+export default useIsKeyboardOpen;

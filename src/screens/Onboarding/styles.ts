@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+
 import Colors from "../../constants/Colors";
 import Layout from "../../constants/Layout";
 
@@ -24,7 +25,7 @@ export default StyleSheet.create({
     marginBottom: 70
   },
   text: {
-    fontSize: Layout.isSmallDevice ? 30 : 40,
+    fontSize: Layout.isSmallDevice ? 35 : 40,
     textAlign: "center"
   },
   signUpButton: {
