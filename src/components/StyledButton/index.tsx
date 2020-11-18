@@ -2,7 +2,6 @@ import React from "react";
 import {
   ActivityIndicator,
   StyleProp,
-  StyleSheet,
   TextStyle,
   TouchableOpacity,
   View,
@@ -100,7 +99,7 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={StyleSheet.compose(getStyle(variant, iconRight, disabled), style)}
+      style={[getStyle(variant, iconRight, disabled), style]}
       accessibilityLabel={ariaLabel}
       disabled={disabled}
     >

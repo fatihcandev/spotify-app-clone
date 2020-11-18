@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
+import { StyleProp, Text, TextStyle } from "react-native";
 
 import Colors from "../../constants/Colors";
 
@@ -26,7 +26,7 @@ const StyledText: React.FC<IStyledTextProps> = ({
     };
   };
 
-  return <Text style={StyleSheet.compose(getStyle(), style)}>{children}</Text>;
+  return <Text style={[getStyle(), style]}>{children}</Text>;
 };
 
 export default StyledText;
