@@ -24,7 +24,6 @@ export default StyleSheet.create({
     marginBottom: 70
   },
   text: {
-    color: Colors.white,
     fontSize: Layout.isSmallDevice ? 30 : 40,
     textAlign: "center"
   },
@@ -33,7 +32,6 @@ export default StyleSheet.create({
   },
   loginText: {
     marginTop: 15,
-    color: Colors.white,
     textAlign: "center"
   }
 });

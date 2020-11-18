@@ -11,7 +11,6 @@ export default StyleSheet.create({
   },
   title: {
     marginBottom: 24,
-    color: Colors.white,
     fontSize: 30
   },
   recentlyPlayedGrid: {

@@ -16,7 +16,6 @@ export default StyleSheet.create({
   },
   smallText: {
     marginBottom: 25,
-    color: Colors.white,
     fontSize: 13
   },
   button: {

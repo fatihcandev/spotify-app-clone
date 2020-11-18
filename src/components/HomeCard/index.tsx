@@ -16,7 +16,7 @@ const HomeCard: React.FC<IHomeCardProps> = ({ image, text, onPress }) => {
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image style={styles.image} source={image} />
       <View style={styles.textContainer}>
-        <StyledText style={styles.text}>{text}</StyledText>
+        <StyledText>{text}</StyledText>
       </View>
     </TouchableOpacity>
   );

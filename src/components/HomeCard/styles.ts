@@ -15,9 +15,6 @@ export default StyleSheet.create({
     justifyContent: "center",
     paddingLeft: 9
   },
-  text: {
-    color: Colors.white
-  },
   image: {
     width: 70,
     height: 70,

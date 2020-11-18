@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "react-native";
+
 import StyledText from "../StyledText";
 
 import styles from "./styles";

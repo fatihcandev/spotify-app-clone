@@ -24,9 +24,6 @@ export default StyleSheet.create({
     borderColor: Colors.border,
     borderWidth: 2
   },
-  textPrimary: {
-    color: Colors.white
-  },
   textSecondary: {
     color: Colors.black
   },

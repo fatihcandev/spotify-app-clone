@@ -7,8 +7,5 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: Colors.black
-  },
-  text: {
-    color: Colors.white
   }
 });

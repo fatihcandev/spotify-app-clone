@@ -19,7 +19,7 @@ const HomeCardSquare: React.FC<IHomeCardSquareProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={image} style={styles.image} />
-      <StyledText style={styles.text}>{text}</StyledText>
+      <StyledText>{text}</StyledText>
     </TouchableOpacity>
   );
 };

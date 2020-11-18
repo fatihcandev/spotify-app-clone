@@ -74,26 +74,14 @@ const getStyle = (
   }
 };
 
-const getTextStyle = (
-  variant: string,
-  disabled?: boolean
-): StyleProp<TextStyle> => {
+const getTextColor = (variant: string, disabled?: boolean): string => {
   switch (variant) {
     case "primary" || "outlined":
-      return {
-        ...styles.textPrimary,
-        color: disabled ? Colors.gray : Colors.white
-      };
+      return disabled ? Colors.gray : Colors.white;
     case "secondary":
-      return {
-        ...styles.textSecondary,
-        color: disabled ? Colors.gray : Colors.black
-      };
+      return disabled ? Colors.gray : Colors.black;
     default:
-      return {
-        ...styles.textPrimary,
-        color: disabled ? Colors.gray : Colors.white
-      };
+      return disabled ? Colors.gray : Colors.white;
   }
 };
 
@@ -123,19 +111,12 @@ const StyledButton: React.FC<IStyledButtonProps> = ({
           <View style={iconLeft ? styles.iconLeft : styles.iconRight}>
             <Icon name={iconLeft! || iconRight!} color={getColor(variant)} />
           </View>
-          <StyledText
-            style={StyleSheet.compose(
-              getTextStyle(variant, disabled),
-              textStyle
-            )}
-          >
+          <StyledText color={getTextColor(variant, disabled)} style={textStyle}>
             {children}
           </StyledText>
         </>
       ) : (
-        <StyledText
-          style={StyleSheet.compose(getTextStyle(variant, disabled), textStyle)}
-        >
+        <StyledText color={getTextColor(variant, disabled)} style={textStyle}>
           {children}
         </StyledText>
       )}
