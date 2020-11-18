@@ -1,10 +1,19 @@
 import React from "react";
-import { StackNavigationOptions } from "@react-navigation/stack";
+import {
+  CardStyleInterpolators,
+  StackNavigationOptions
+} from "@react-navigation/stack";
 import { BottomTabBarOptions } from "@react-navigation/bottom-tabs";
 
 import Icon from "../components/Icon";
 
 import Colors from "./Colors";
+
+export const horizontalTransitionOptions: StackNavigationOptions = {
+  gestureEnabled: true,
+  gestureDirection: "horizontal",
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+};
 
 export const bottomTabBarOptions: BottomTabBarOptions = {
   inactiveTintColor: Colors.lightGray,

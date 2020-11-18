@@ -7,6 +7,7 @@ import SignUp from "../screens/SignUp";
 import SignUpPassword from "../screens/SignUp/SignUpPassword";
 
 import {
+  horizontalTransitionOptions,
   loginScreenOptions,
   signUpScreenOptions
 } from "../constants/navigationOptions";
@@ -16,7 +17,7 @@ const AuthStack = createStackNavigator<AuthStackParamList>();
 
 const AuthNavigator = () => {
   return (
-    <AuthStack.Navigator>
+    <AuthStack.Navigator screenOptions={horizontalTransitionOptions}>
       <AuthStack.Screen
         name="Onboarding"
         component={Onboarding}

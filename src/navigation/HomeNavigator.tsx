@@ -4,14 +4,17 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/Home";
 import Playlist from "../screens/Playlist";
 
-import { playlistScreenOptions } from "../constants/navigationOptions";
+import {
+  horizontalTransitionOptions,
+  playlistScreenOptions
+} from "../constants/navigationOptions";
 import { HomeParamList } from "../types";
 
 const HomeStack = createStackNavigator<HomeParamList>();
 
 const HomeNavigator = () => {
   return (
-    <HomeStack.Navigator headerMode="screen">
+    <HomeStack.Navigator screenOptions={horizontalTransitionOptions}>
       <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
