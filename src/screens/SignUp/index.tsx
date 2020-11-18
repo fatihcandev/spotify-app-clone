@@ -39,6 +39,7 @@ const SignUp: React.FC<ISignUpProps> = ({ navigation }) => {
           type="emailAddress"
           onChange={v => setEmail(v)}
           keyboardType="email-address"
+          returnKeyType="done"
           focusedBgColor={Colors.border}
           style={styles.input}
         />

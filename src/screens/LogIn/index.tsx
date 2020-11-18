@@ -26,8 +26,10 @@ const LogIn: React.FC = () => {
           title="Email or username"
           value={username}
           type="emailAddress"
-          onChange={v => setUsername(v)}
+          keyboardType="email-address"
+          returnKeyType="next"
           focusedBgColor={Colors.border}
+          onChange={v => setUsername(v)}
           style={styles.input}
         />
         <View style={styles.passwordContainer}>
@@ -35,8 +37,10 @@ const LogIn: React.FC = () => {
             title="Password"
             value={password}
             type={showPassword ? "none" : "password"}
-            onChange={v => setPassword(v)}
+            keyboardType="default"
+            returnKeyType="done"
             focusedBgColor={Colors.border}
+            onChange={v => setPassword(v)}
             style={styles.input}
           />
           <IconButton

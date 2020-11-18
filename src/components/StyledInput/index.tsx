@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import {
-  StyleProp,
-  StyleSheet,
-  TextInput,
-  TextStyle,
-  View
-} from "react-native";
+import { Animated, StyleProp, TextInput, TextStyle, View } from "react-native";
 
 import StyledText from "../StyledText";
-
-import Colors from "../../constants/Colors";
 
 import styles from "./styles";
 
@@ -19,6 +11,7 @@ interface IStyledInputProps {
   placeholder?: string;
   type?: "emailAddress" | "username" | "password" | "none";
   keyboardType?: "email-address" | "default";
+  returnKeyType?: "done" | "go" | "next" | "search" | "send";
   focusedBgColor?: string;
   style?: StyleProp<any>;
   onChange: (v: string) => void;
@@ -32,6 +25,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
   placeholder,
   type,
   keyboardType,
+  returnKeyType,
   focusedBgColor,
   style,
   onChange,
@@ -40,10 +34,9 @@ const StyledInput: React.FC<IStyledInputProps> = ({
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
 
-  const getStyle = (): StyleProp<TextStyle> => {
+  const getFocusedStyle = (): StyleProp<TextStyle> => {
     return {
-      ...styles.input,
-      backgroundColor: focused ? focusedBgColor : Colors.white
+      backgroundColor: focused ? focusedBgColor : style.backgroundColor
     };
   };
 
@@ -57,17 +50,20 @@ const StyledInput: React.FC<IStyledInputProps> = ({
     onBlur && onBlur();
   };
 
+  const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+
   return (
     <View>
       {title && <StyledText style={styles.title}>{title}</StyledText>}
-      <TextInput
-        style={StyleSheet.compose(getStyle(), style)}
+      <AnimatedTextInput
+        style={[styles.input, style, getFocusedStyle()]}
         value={value}
         placeholder={placeholder}
         onChangeText={onChange}
         secureTextEntry={type === "password"}
         textContentType={type}
         keyboardType={keyboardType}
+        returnKeyType={returnKeyType}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
