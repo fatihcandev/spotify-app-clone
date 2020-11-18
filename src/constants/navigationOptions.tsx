@@ -20,12 +20,13 @@ export const bottomTabBarOptions: BottomTabBarOptions = {
     height: 65,
     backgroundColor: Colors.darkGray,
     borderTopWidth: 0
-  }
+  },
+  keyboardHidesTabBar: true
 };
 
 export const loginScreenOptions: StackNavigationOptions = {
   headerShown: true,
-  headerTitle: "",
+  headerTitle: undefined,
   headerStyle: {
     backgroundColor: Colors.black
   },
