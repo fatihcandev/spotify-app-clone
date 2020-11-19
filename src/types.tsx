@@ -84,6 +84,14 @@ export interface ISong {
   cover: any;
 }
 
+export interface IRecentSearch {
+  id: string;
+  type: "Artist" | "Song" | "Album" | "Playlist";
+  cover: any;
+  name: string;
+  artist?: string;
+}
+
 export enum IconName {
   home = "home",
   homeSolid = "homeSolid",
@@ -103,5 +111,6 @@ export enum IconName {
   google = "google",
   facebook = "facebook",
   eye = "eye",
-  eyeSlash = "eyeSlash"
+  eyeSlash = "eyeSlash",
+  x = "x"
 }
