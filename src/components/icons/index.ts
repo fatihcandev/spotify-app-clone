@@ -17,3 +17,4 @@ export { default as Google } from "./Google";
 export { default as Facebook } from "./Facebook";
 export { default as EyeSlash } from "./EyeSlash";
 export { default as Eye } from "./Eye";
+export { default as X } from "./X";

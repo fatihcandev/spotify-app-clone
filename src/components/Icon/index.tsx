@@ -51,6 +51,8 @@ const Icon: React.FC<IconProps> = ({ name, color, ...props }) => {
       return <Icons.Eye color={color} {...props} />;
     case IconName.eyeSlash:
       return <Icons.EyeSlash color={color} {...props} />;
+    case IconName.x:
+      return <Icons.X color={color} {...props} />;
     default:
       return null;
   }
