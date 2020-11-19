@@ -17,16 +17,14 @@ const StyledText: React.FC<IStyledTextProps> = ({
   style,
   children
 }) => {
-  const getStyle = (): StyleProp<TextStyle> => {
-    return {
-      ...styles.text,
-      color: color,
-      fontWeight: bold ? "bold" : "normal",
-      fontFamily: bold ? "proxima-nova-bold" : "proxima-nova"
-    };
+  const textStyle: StyleProp<TextStyle> = {
+    ...styles.text,
+    color: color,
+    fontWeight: bold ? "bold" : "normal",
+    fontFamily: bold ? "proxima-nova-bold" : "proxima-nova"
   };
 
-  return <Text style={[getStyle(), style]}>{children}</Text>;
+  return <Text style={[textStyle, style]}>{children}</Text>;
 };
 
 export default StyledText;

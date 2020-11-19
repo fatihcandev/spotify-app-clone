@@ -23,11 +23,9 @@ const Input: React.FC<IInputProps> = ({
   onFocus,
   onBlur
 }) => {
-  const getStyle = (): StyleProp<any> => {
-    return {
-      ...styles.input,
-      ...style
-    };
+  const inputStyle: StyleProp<any> = {
+    ...styles.input,
+    ...style
   };
 
   return (
@@ -42,7 +40,7 @@ const Input: React.FC<IInputProps> = ({
         onFocus={onFocus}
         onBlur={onBlur}
         placeholder="Artists, songs, or podcasts"
-        style={getStyle()}
+        style={inputStyle}
       />
       <View style={styles.searchIcon}>
         <Icon name="search" color={Colors.gray} />

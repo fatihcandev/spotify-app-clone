@@ -4,13 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import StyledButton from "../../components/StyledButton";
 import StyledInput from "../../components/StyledInput";
+import IconButton from "../../components/IconButton";
 
 import { handleOutsideClick } from "../../utils/handleOutsideClick";
 import { safeAreaStyle } from "../../constants/safeAreaStyle";
+import Colors from "../../constants/Colors";
 
 import styles from "./styles";
-import IconButton from "../../components/IconButton";
-import Colors from "../../constants/Colors";
 
 const LogIn: React.FC = () => {
   const [username, setUsername] = useState<string>("");

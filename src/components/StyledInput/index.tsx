@@ -34,10 +34,8 @@ const StyledInput: React.FC<IStyledInputProps> = ({
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
 
-  const getFocusedStyle = (): StyleProp<TextStyle> => {
-    return {
-      backgroundColor: focused ? focusedBgColor : style.backgroundColor
-    };
+  const focusedStyle: StyleProp<TextStyle> = {
+    backgroundColor: focused ? focusedBgColor : style.backgroundColor
   };
 
   const handleFocus = () => {
@@ -56,7 +54,7 @@ const StyledInput: React.FC<IStyledInputProps> = ({
     <View>
       {title && <StyledText style={styles.title}>{title}</StyledText>}
       <AnimatedTextInput
-        style={[styles.input, style, getFocusedStyle()]}
+        style={[styles.input, style, focusedStyle]}
         value={value}
         placeholder={placeholder}
         onChangeText={onChange}

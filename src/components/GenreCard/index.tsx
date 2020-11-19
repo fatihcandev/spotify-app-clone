@@ -14,15 +14,13 @@ interface IGenreCardProps {
 }
 
 const GenreCard: React.FC<IGenreCardProps> = ({ name, genre, onPress }) => {
-  const getContainerStyle = (): StyleProp<ViewStyle> => {
-    return {
-      ...styles.container,
-      backgroundColor: Colors.genre[genre]
-    };
+  const containerStyle: StyleProp<ViewStyle> = {
+    ...styles.container,
+    backgroundColor: Colors.genre[genre]
   };
 
   return (
-    <TouchableOpacity style={getContainerStyle()} onPress={onPress}>
+    <TouchableOpacity style={containerStyle} onPress={onPress}>
       <StyledText style={styles.name}>{name}</StyledText>
     </TouchableOpacity>
   );
